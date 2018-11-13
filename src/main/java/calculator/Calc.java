@@ -1,7 +1,7 @@
 package calculator;
 
 import java.util.HashMap;
-import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.qa.accountapplication.Account;
 
@@ -14,15 +14,6 @@ public class Calc {
 	}
 
 	public int calcAmount(String chosenName) {
-		int counter = 0;
-		
-		for (Map.Entry<Integer, Account> entry : map.entrySet()) {
-			Account value = entry.getValue();
-			if (value.getFirstName().equals(chosenName)) {
-				counter++;
-			}
-		}
-		
-		return counter;
+		return map.entrySet().stream().filter(e -> chosenName.equals(e.getValue().getFirstName())).collect(Collectors.toList()).size();
 	}
 }
