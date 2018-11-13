@@ -12,11 +12,15 @@ public class Service {
 		newAccount.setLastName(lastName);
 		newAccount.setAccountNumber(accountNumber);
 		newMap.put(hashMapKey, newAccount);
-		System.out.println("Accounts created -- Key is " + hashMapKey);
 		hashMapKey++;
 	}
+	
 	public Account get(int keyForAccount) {
 		Account person = newMap.get(keyForAccount);
 		return person;
+	}
+	
+	public HashMap<Integer, Account> getMap() {
+		return newMap;
 	}
 }

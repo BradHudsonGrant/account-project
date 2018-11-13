@@ -5,13 +5,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class PrintAccountDetails {
 	
-	public static void printAccount(Account person) {
-		System.out.println("Account Number: " + person.getAccountNumber());
-		System.out.println("First Name: " + person.getFirstName());
-		System.out.println("Last Name: " + person.getLastName());
+	public static boolean printAccount(Account person) {
+			System.out.println("Account Number: " + person.getAccountNumber());
+			System.out.println("First Name: " + person.getFirstName());
+			System.out.println("Last Name: " + person.getLastName());
+			return true;
 	}
 
-	public static void printAccountJSON(Account person){
+	public static String printAccountJSON(Account person){
 		ObjectMapper objMapper = new ObjectMapper();
 		String stringForJSON = "";
 		try {
@@ -19,6 +20,6 @@ public class PrintAccountDetails {
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
-		System.out.println(stringForJSON);
+		return stringForJSON;
 	}
 }

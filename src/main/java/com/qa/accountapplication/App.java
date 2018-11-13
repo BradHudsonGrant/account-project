@@ -12,7 +12,7 @@ public class App {
 		service.put("Joe", "Mitchell", "000003");
 
 		Account person = service.get(1);
-		PrintAccountDetails.printAccountJSON(person);
+		System.out.println(PrintAccountDetails.printAccountJSON(person));
 		person = service.get(2);
 		PrintAccountDetails.printAccountJSON(person);
 	}
